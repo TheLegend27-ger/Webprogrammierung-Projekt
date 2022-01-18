@@ -10,74 +10,85 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
   </head>
   <body>
-    <header>
-      <img src="https://pngimg.com/uploads/dice/dice_PNG25.png" alt=""
-        width="50">
-      <strong>Spieleprofis!</strong>
-    </header>
-    <main>
-      <section>
-        <h1>Spielanleitungen</h1>
-        <p>Wir wollen Spieleanleitungen für die absoluten Klassiker der
-          Gesellschaftsspiele und Kartenspiele schreiben.</p>
-
-        <table border="2">
-          <thead>
-            <tr>
-              <th>Spiel</th>
-              <th>Spieler:innenanzahl</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>TicTacToe</td>
-              <td>2</td>
-              <th><a href="pages/tictactoe.html">Zur Spieleanleitung</a></th>
-            </tr>
-            <tr>
-              <td>Schere Stein Papier</td>
-              <td>2</td>
-              <th><a href="pages/scheresteinpapier.html">Zur Spieleanleitung</a></th>
-            </tr>
-            <tr>
-              <td>Kniffel</td>
-              <td>2-∞</td>
-              <th><a href="pages/kniffel.html">Zur Spieleanleitung</a></th>
-            </tr>
-            <tr>
-              <td>Backgammon</td>
-              <td>2</td>
-              <th><a href="pages/backgammon.html">Zur Spieleanleitung</a></th>
-            </tr>
-            <tr>
-              <td>Romme</td>
-              <td>2-6</td>
-              <th><a href="pages/Romme.html">Zur Spieleanleitung</a></th>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section>
-        <h2>Spielevorschläge</h2>
-        <p>Habt ihr noch weitere Ideen für Spieleanleitungen?</p>
-        <form action="">
-          <label for="username">Name:
-            <input name="username" id="username" type="text">
-          </label><br>
-          <label for="email">E-Mail:
-            <input name="email" id="email" type="email">
-          </label><br>
-          <label for="message">
-            <textarea name="message" id="message" cols="30" rows="10"></textarea>
-          </label>
-        </form>
-      </section>
-    </main>
-    <footer>
-      <nav>
-        <a href="pages/impressum.html">Impressum</a>
+    <div class="grid-wrapper">
+      <header class="header">
+        <img src="https://pngimg.com/uploads/dice/dice_PNG25.png" alt=""
+          width="50">
+        <strong>Spieleprofis!</strong>
+      </header>
+      <nav class="game-nav">
+        <ul>
+          <li><a href="pages/backgammon.html">Backgammon</a></li>
+          <li><a href="pages/kniffel.html">Kniffel</a></li>
+          <li><a href="pages/Romme.html">Rommé</a></li>
+          <li><a href="pages/scheresteinpapier.html">Schere Stein Papier</a></li>
+          <li><a href="pages/tictactoe.html">Tic Tac Toe</a></li>
+        </ul>
       </nav>
-    </footer>
+      <main class="main">
+        <section>
+          <h1>Spielanleitungen</h1>
+          <p>Wir wollen Spieleanleitungen für die absoluten Klassiker der
+            Gesellschaftsspiele und Kartenspiele schreiben.</p>
+
+          <table border="2">
+            <thead>
+              <tr>
+                <th>Spiel</th>
+                <th>Spieler:innenanzahl</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>TicTacToe</td>
+                <td>2</td>
+                <th><a href="pages/tictactoe.html">Zur Spieleanleitung</a></th>
+              </tr>
+              <tr>
+                <td>Schere Stein Papier</td>
+                <td>2</td>
+                <th><a href="pages/scheresteinpapier.html">Zur Spieleanleitung</a></th>
+              </tr>
+              <tr>
+                <td>Kniffel</td>
+                <td>2-∞</td>
+                <th><a href="pages/kniffel.html">Zur Spieleanleitung</a></th>
+              </tr>
+              <tr>
+                <td>Backgammon</td>
+                <td>2</td>
+                <th><a href="pages/backgammon.html">Zur Spieleanleitung</a></th>
+              </tr>
+              <tr>
+                <td>Romme</td>
+                <td>2-6</td>
+                <th><a href="pages/Romme.html">Zur Spieleanleitung</a></th>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <h2>Spielevorschläge</h2>
+          <p>Habt ihr noch weitere Ideen für Spieleanleitungen?</p>
+          <form action="">
+            <label for="username">Name:
+              <input name="username" id="username" type="text">
+            </label><br>
+            <label for="email">E-Mail:
+              <input name="email" id="email" type="email">
+            </label><br>
+            <label for="message">
+              <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            </label>
+          </form>
+        </section>
+      </main>
+      <footer class="footer">
+        <nav>
+          <a href="pages/impressum.html">Impressum</a>
+        </nav>
+      </footer>
+    </div>
   </body>
 </html>
