@@ -9,25 +9,74 @@
     <script src='main.js'></script>
   </head>
   <header>
-    <h1>Rommé Spielanleitung</h1>
+    <h1>Rommé - Spielanleitung</h1>
   </header>
   <body>
-    <h2>Gegebenheiten</h2>
+    <h2>Allgemeines</h2>
     <ul>
-      <li>Anzahl der Spieler: 2-6</li>
+      <li>Anzahl der Spieler:innen: 2-6</li>
       <li>Spieldauer: bis zu 60 Minuten</li>
+      <li>Material: 110 Spielkarten</li>
     </ul>
-    <h2>Regeln</h2>
-    <ul>
-      <li>Der Spieler wählt zwischen den Steinen X und O</li>
-      <li>Legt abwechselnd eure Steine auf das Spielfeld</li>
-      <li>Sieger ist, wer zuerst eine Dreiherreihe gelegt hat</li>
-      <li>Die Steine können dabei senkrecht, waagerecht oder diagonal auf dem
-        Spielfeld liegen</li>
-    </ul>
+    <h2>Spielvorbereitung</h2>
+    <p>
+      Alle Spielkarten werden gemischt. Anschließend werden die Karten im 
+      Uhrzeigersinn auf alle Spieler:innen verteilt. Jede:r erhält 13 Karten, 
+      die austeilende Person gibt sich selber  14 Karten. Die übrigen Karten 
+      werden verdeckt als Nachziehstapel in die Mitte gelegt.
+    </p>
+    <h2>Wie wird gespielt?</h2>
+    <p>Die austeilende Person beginnt, danach sind alle Spieler:innen sind im Uhrzeigersinn dran.</p>
     <br>
-    <img
-      src="https://geekflare.com/wp-content/uploads/2021/08/Tic-Tac-Toe-Winning-Arragements-e1629210910316.png"
-      alt="" width="600" height="400">
+    <p>
+      Die Person, die dran ist, zieht entweder eine verdeckte Karte von dem Nachziehstapel oder die
+      letzte, offene Karte vom Abwurfstapel (Eine Ausnahme hierzu stellt die beginnende Person da).
+    </p>
+    <h2>Kartenwerte</h2>
+    <p>
+      <table>
+        <thead>
+          <tr>
+              <th>Karte</th>
+              <th>Kartenwert</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Zählkarten</td>
+            <td>Augenzahl</td>
+          </tr>
+          <tr>
+            <td>Bube</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>Dame</td>
+            <td>11</td>
+          </tr>
+          <tr>
+            <td>König</td>
+            <td>12</td>
+          </tr>
+          <tr>
+            <td>Ass</td>
+            <td>13/1*</td>
+          </tr>
+          <tr>
+            <td>Joker</td>
+            <td>Augenzahl der zu ersetzenden Karte</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        *Wenn das Ass in der Folge "Dame>König>Ass" verwendet wird, hat das Ass den Wert 13.
+        Wenn das Ass in der Folge "Ass>2>3" verwendet wird, hat das Ass den  Wert 1.
+      </p>
+    </p>
+
+    <p align="center"><a class="ex5" href="romme.html" style="color:
+      #000000"> <font size="+3">&#x21E7;</font></a></p>
+    <p align="center"><a class="ex5" href="index.html" style="color: #000000">zur&uuml;ck
+      zur Startseite</a></p>
   </body>
 </html>
