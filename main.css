@@ -11,3 +11,27 @@
 .back-img-1{
     border: 5px solid yellow;
 }
+
+/* Layout */
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: 5% 25% 65% 5%;
+}
+
+.header {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.game-nav {
+    grid-column-start: 2;
+}
+
+.main {
+    grid-column-start: 3;
+}
+
+.footer {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
