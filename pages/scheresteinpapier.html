@@ -136,18 +136,29 @@
 
       <h3>Kommentare</h3>
 
-      <form action="submit">
-        <input type="text" placeholder="Username" />
+      <form action="https://duckduckgo.com">
+        <label for="Username"
+          ><input
+            id="Username"
+            name="Username"
+            type="text"
+            placeholder="Username"
+        /></label>
+
         <br />
-        <textarea
-          placeholder="Kommentar"
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-        ></textarea>
+        <label for="Kommentar">
+          <textarea
+            placeholder="Kommentar"
+            name="Kommentar"
+            id="Kommentar"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </label>
         <br />
-        <button type="submit">Submit</button>
+        <label for="Submit">
+          <button name="Submt" id="Submit" type="submit">Submit</button>
+        </label>
       </form>
     </main>
 
