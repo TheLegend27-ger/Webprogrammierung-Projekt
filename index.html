@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Tim, Dustin, Jana, Neo, Orhun, Josephine">
+    <meta name="author" content="Jana">
     <title>Document</title>
   </head>
   <body>
@@ -19,66 +19,63 @@
         <h1>Spielanleitungen</h1>
         <p>Wir wollen Spieleanleitungen für die absoluten Klassiker der
           Gesellschaftsspiele und Kartenspiele schreiben.</p>
-        <ul>
-          <li>
-            <a href="pages/backgammon.html">Backgammon</a>
-          </li>
-          <li>
-            <a href="pages/Durak.html">Durak</a>
-          </li>
-        </ul>
-        <table>
+
+        <table border="2">
           <thead>
             <tr>
               <th>Spiel</th>
               <th>Spieler:innenanzahl</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>TicTacToe</td>
               <td>2</td>
+              <th><a href="pages/tictactoe.html">Zur Spieleanleitung</a></th>
             </tr>
             <tr>
               <td>Schere Stein Papier</td>
               <td>2</td>
+              <th><a href="pages/scheresteinpapier.html">Zur Spieleanleitung</a></th>
             </tr>
             <tr>
               <td>Kniffel</td>
               <td>2-∞</td>
+              <th><a href="pages/kniffel.html">Zur Spieleanleitung</a></th>
             </tr>
             <tr>
               <td>Backgammon</td>
               <td>2</td>
+              <th><a href="pages/backgammon.html">Zur Spieleanleitung</a></th>
             </tr>
             <tr>
               <td>Romme</td>
-              <td>2-∞∞</td>
+              <td>2-6</td>
+              <th><a href="pages/Romme.html">Zur Spieleanleitung</a></th>
             </tr>
           </tbody>
         </table>
       </section>
       <section>
         <h2>Spielevorschläge</h2>
+        <p>Habt ihr noch weitere Ideen für Spieleanleitungen?</p>
         <form action="">
-          <label for="name">Name:
-            <input name="name" type="text">
+          <label for="username">Name:
+            <input name="username" id="username" type="text">
           </label><br>
           <label for="email">E-Mail:
-            <input name="email" type="email">
+            <input name="email" id="email" type="email">
           </label><br>
           <label for="message">
-            <textarea name="message" id="" cols="30" rows="10"></textarea>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
           </label>
         </form>
       </section>
     </main>
     <footer>
       <nav>
-        <ul>
-          <li><a href="pages/about.html">Über Uns</a></li>
-          <li><a href="pages/impressum.html">impressum</a></li>
-        </ul>
+        <a href="pages/impressum.html">Impressum</a>
       </nav>
     </footer>
   </body>
