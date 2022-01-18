@@ -3,127 +3,142 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>TicTacToe Anleitung</title>
+    <title>Romme Anleitung</title>
     <meta name='author' content='Joséphine Stöhr'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../main.css'>
     <script src='main.js'></script>
   </head>
-  <header>
-    <img src="https://pngimg.com/uploads/dice/dice_PNG25.png" alt=""
-    width="50">
-    <strong>Spieleprofis!</strong>
-    <h1>Rommé - Spielanleitung</h1>
-  </header>
+
   <body>
-    <h2>Inhaltsverzeichnis</h2>
+    <div class="grid-wrapper">
+      <header class="header">
+        <img src="https://pngimg.com/uploads/dice/dice_PNG25.png" alt=""
+        width="50">
+        <strong>Spieleprofis!</strong>
+      </header>
+      <nav class="game-nav">
+        <ul>
+          <li><a href="./backgammon.html">Backgammon</a></li>
+          <li><a href="./kniffel.html">Kniffel</a></li>
+          <li><a href="./Romme.html">Rommé</a></li>
+          <li><a href="./scheresteinpapier.html">Schere Stein Papier</a></li>
+          <li><a href="./tictactoe.html">Tic Tac Toe</a></li>
+        </ul>
+      </nav>
+      <main class="main">
+        <h1>Rommé - Spielanleitung</h1>
+        <h2>Inhaltsverzeichnis</h2>
+      <ol>
+        <li><a href="#Allgemeines">Allgemeines</a></li>
+        <li><a href="#Spielvorbereitung">Spielvorbereitung</a></li>
+        <li><a href="#WieWirdGespielt">Wie wird gespielt?</a></li>
+        <li><a href="#FigurenAblegen">Figuren ablegen</a></li>
+        <li><a href="#Joker">Joker</a></li>
+        <li><a href="#Kartenwert">Kartenwerte</a></li>
+      </ol>
 
-    <ol>
-      <li><a href="#Allgemeines">Allgemeines</a></li>
-      <li><a href="#Spielvorbereitung">Spielvorbereitung</a></li>
-      <li><a href="#WieWirdGespielt">Wie wird gespielt?</a></li>
-      <li><a href="#FigurenAblegen">Figuren ablegen</a></li>
-      <li><a href="#Joker">Joker</a></li>
-      <li><a href="#Kartenwert">Kartenwerte</a></li>
-    </ol>
-
-    <h2 id="Allgemeines">Allgemeines</h2>
-    <ul>
-      <li>Anzahl der Spieler:innen: 2-6</li>
-      <li>Spieldauer: bis zu 60 Minuten</li>
-      <li>Material: 110 Spielkarten</li>
-    </ul>
-    <h2 id="Spielvorbereitung">Spielvorbereitung</h2>
-    <p>
-      Alle Spielkarten werden gemischt. Anschließend werden die Karten im 
-      Uhrzeigersinn auf alle Spieler:innen verteilt. Jede:r erhält 13 Karten, 
-      die austeilende Person gibt sich selber  14 Karten. Die übrigen Karten 
-      werden verdeckt als Nachziehstapel in die Mitte gelegt.
-    </p>
-    <h2 id="WieWirdGespielt">Wie wird gespielt?</h2>
-    <p>Die austeilende Person beginnt, danach sind alle Spieler:innen sind im Uhrzeigersinn dran.</p>
-    <br>
-    <p>
-      Die Person, die dran ist, zieht entweder eine verdeckte Karte von dem Nachziehstapel oder die
-      letzte, offene Karte vom Abwurfstapel <i>(Eine Ausnahme hierzu stellt die beginnende Person da: 
-       Da diese bereits seit dem Ausgeben eine Karte mehr besitzt, muss sie im ersten Zug nicht ziehen)</i>.
-    </p>
-    <br>
-    <p>
-      Anschließend legt der:die Spieler:in Figuren ab oder legt an bestehende Figuren an. Ein:e Spieler:in 
-      kann erst dann an bestehende Figuren anlegen, wenn er oder sie bereits rausgekommen ist. Um rauszukommen
-      muss er oder sie eine Figur ablegen, deren summierter Kartenwert größer oder gleich 30 ist <i>(Es gibt Varianten
-      bei denen dieser Wert bei 35, 40 oder höher liegt)</i>.
-    </p>
-    <br>
-    <p>
-      Ein:e Spieler:in beendet den eigenen Zug, indem er oder sie eine beliebige Karte von der Hand abwirft. Es gewinnt
-      die Person, die <b>nach dem Abwerfen einer Handkarte</b> keine Karten mehr auf der Hand hat.
-    </p>
-    <h3 id="FigurenAblegen">Figuren ablegen</h3>
-    <p>Als gültige Figuren gelten:</p>
-    <ul>
-      <li>Reihe: drei oder mehr aufeinander folgende Karten der <b>gleichen</b> Farbe, z.B. 7-8-9</li>
-      <li>Satz: drei oder vier gleichrangige Karten <b>verschiedener</b> Farben </li>
-    </ul>
-    <p>Es müssen immer mindestens drei Karten in einer Figur liegen.</p>
-    <h3>An Figuren anlegen</h3>
-    <p>An bereits ausliegende Figuren können Karten angelegt werden, solange die Regeln der Figur eingehalten
-      werden. So kann an einen Satz mit drei Karten maximal noch eine Karte in der <i>fehlenden</i> Farbe angelegt
-      werden. An eine  Reihe können nur Karten der <i>gleiche</i> Farbe, die um eins kleiner oder ums eins  größer
-      als  die jeweils kleinste oder größte Karte der Reihe sind, angelegt werden.
-    </p>
-    <h3 id="Joker">Joker</h3>
-    <p>
-      Ein Joker kann eine fehlende Karte in einer Reihe oder einem Satz erstetzen und kann in weiteren Zügen
-      durch die entsprechende fehlende Karte ausgetauscht werden. Der:Die Spieler:in, die den Joker ausgetauscht
-      kann diesen auf die Hand nehmen.
-    </p>
-    <h3 id="Kartenwert">Kartenwerte</h3>
-    <p>Die folgende  Tabelle zeigt eine Übersicht über die Werte der einzelnen Karten:</p>
-    <p>
-      <table border=2>
-        <thead>
-          <tr>
-              <th>Karte</th>
-              <th>Kartenwert</th>
-            </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Zählkarten</td>
-            <td>Augenzahl</td>
-          </tr>
-          <tr>
-            <td>Bube</td>
-            <td>10</td>
-          </tr>
-          <tr>
-            <td>Dame</td>
-            <td>11</td>
-          </tr>
-          <tr>
-            <td>König</td>
-            <td>12</td>
-          </tr>
-          <tr>
-            <td>Ass</td>
-            <td>13/1*</td>
-          </tr>
-          <tr>
-            <td>Joker</td>
-            <td>Augenzahl der zu ersetzenden Karte</td>
-          </tr>
-        </tbody>
-      </table>
+      <h2 id="Allgemeines">Allgemeines</h2>
+      <ul>
+        <li>Anzahl der Spieler:innen: 2-6</li>
+        <li>Spieldauer: bis zu 60 Minuten</li>
+        <li>Material: 110 Spielkarten</li>
+      </ul>
+      <h2 id="Spielvorbereitung">Spielvorbereitung</h2>
       <p>
-        * Wenn das Ass in der Folge "Dame>König>Ass" verwendet wird, hat das Ass den Wert 13.
-        Wenn das Ass in der Folge "Ass>2>3" verwendet wird, hat das Ass den  Wert 1.
+        Alle Spielkarten werden gemischt. Anschließend werden die Karten im 
+        Uhrzeigersinn auf alle Spieler:innen verteilt. Jede:r erhält 13 Karten, 
+        die austeilende Person gibt sich selber  14 Karten. Die übrigen Karten 
+        werden verdeckt als Nachziehstapel in die Mitte gelegt.
       </p>
-    </p>
+      <h2 id="WieWirdGespielt">Wie wird gespielt?</h2>
+      <p>Die austeilende Person beginnt, danach sind alle Spieler:innen sind im Uhrzeigersinn dran.</p>
+      <br>
+      <p>
+        Die Person, die dran ist, zieht entweder eine verdeckte Karte von dem Nachziehstapel oder die
+        letzte, offene Karte vom Abwurfstapel <i>(Eine Ausnahme hierzu stellt die beginnende Person da: 
+        Da diese bereits seit dem Ausgeben eine Karte mehr besitzt, muss sie im ersten Zug nicht ziehen)</i>.
+      </p>
+      <br>
+      <p>
+        Anschließend legt der:die Spieler:in Figuren ab oder legt an bestehende Figuren an. Ein:e Spieler:in 
+        kann erst dann an bestehende Figuren anlegen, wenn er oder sie bereits rausgekommen ist. Um rauszukommen
+        muss er oder sie eine Figur ablegen, deren summierter Kartenwert größer oder gleich 30 ist <i>(Es gibt Varianten
+        bei denen dieser Wert bei 35, 40 oder höher liegt)</i>.
+      </p>
+      <br>
+      <p>
+        Ein:e Spieler:in beendet den eigenen Zug, indem er oder sie eine beliebige Karte von der Hand abwirft. Es gewinnt
+        die Person, die <b>nach dem Abwerfen einer Handkarte</b> keine Karten mehr auf der Hand hat.
+      </p>
+      <h3 id="FigurenAblegen">Figuren ablegen</h3>
+      <p>Als gültige Figuren gelten:</p>
+      <ul>
+        <li>Reihe: drei oder mehr aufeinander folgende Karten der <b>gleichen</b> Farbe, z.B. 7-8-9</li>
+        <li>Satz: drei oder vier gleichrangige Karten <b>verschiedener</b> Farben </li>
+      </ul>
+      <p>Es müssen immer mindestens drei Karten in einer Figur liegen.</p>
+      <h3>An Figuren anlegen</h3>
+      <p>An bereits ausliegende Figuren können Karten angelegt werden, solange die Regeln der Figur eingehalten
+        werden. So kann an einen Satz mit drei Karten maximal noch eine Karte in der <i>fehlenden</i> Farbe angelegt
+        werden. An eine  Reihe können nur Karten der <i>gleiche</i> Farbe, die um eins kleiner oder ums eins  größer
+        als  die jeweils kleinste oder größte Karte der Reihe sind, angelegt werden.
+      </p>
+      <h3 id="Joker">Joker</h3>
+      <p>
+        Ein Joker kann eine fehlende Karte in einer Reihe oder einem Satz erstetzen und kann in weiteren Zügen
+        durch die entsprechende fehlende Karte ausgetauscht werden. Der:Die Spieler:in, die den Joker ausgetauscht
+        kann diesen auf die Hand nehmen.
+      </p>
+      <h3 id="Kartenwert">Kartenwerte</h3>
+      <p>Die folgende  Tabelle zeigt eine Übersicht über die Werte der einzelnen Karten:</p>
+      <p>
+        <table border=2>
+          <thead>
+            <tr>
+                <th>Karte</th>
+                <th>Kartenwert</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Zählkarten</td>
+              <td>Augenzahl</td>
+            </tr>
+            <tr>
+              <td>Bube</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>Dame</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>König</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>Ass</td>
+              <td>13/1*</td>
+            </tr>
+            <tr>
+              <td>Joker</td>
+              <td>Augenzahl der zu ersetzenden Karte</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          * Wenn das Ass in der Folge "Dame>König>Ass" verwendet wird, hat das Ass den Wert 13.
+          Wenn das Ass in der Folge "Ass>2>3" verwendet wird, hat das Ass den  Wert 1.
+        </p>
+      </p>
+      </main>
 
-    <p align="center"><a class="ex5" href="romme.html" style="color:
-      #000000"> <font size="+3">&#x21E7;</font></a></p>
-    <p align="center"><a class="ex5" href="index.html" style="color: #000000">zur&uuml;ck
-      zur Startseite</a></p>
+      <footer class="footer">
+          <p align="center"><a class="ex5" href="romme.html" style="color:
+            #000000"> <font size="+3">&#x21E7;</font></a></p>
+          <p align="center"><a class="ex5" href="index.html" style="color: #000000">zur&uuml;ck
+            zur Startseite</a></p>
+      </footer>
+      </div>
   </body>
 </html>
