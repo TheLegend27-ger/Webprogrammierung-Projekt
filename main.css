@@ -15,23 +15,33 @@
 /* Layout */
 .grid-wrapper {
     display: grid;
-    grid-template-columns: 5% 25% 65% 5%;
+    grid-template-columns: 5% 90% 5%;
+}
+
+.header,
+.game-nav,
+.main,
+.footer {
+    grid-column-start: 2;
 }
 
 .header {
-    grid-column-start: 2;
-    grid-column-end: 4;
+    display: flex;
+    align-items: center;
 }
 
-.game-nav {
-    grid-column-start: 2;
+.header a {
+    display: block;
+    padding-right: 1rem;
 }
 
-.main {
-    grid-column-start: 3;
+.game-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
 }
 
-.footer {
-    grid-column-start: 2;
-    grid-column-end: 4;
+.game-nav ul li {
+    padding-right: 1rem;
 }
