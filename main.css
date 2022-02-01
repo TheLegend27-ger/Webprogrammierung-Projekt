@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Roboto&display=swap');
+
 .para-back-1{
     color: red;
     font-weight: bold;
@@ -44,4 +46,19 @@
 
 .game-nav ul li {
     padding-right: 1rem;
+}
+
+/* Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Comforter', cursive;
+    font-size: 1.5em;
+}
+
+.header strong {
+    font-family: 'Comforter', cursive;
+    font-size: 52px;
 }
