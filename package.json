@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build-docker": "docker build -t webprog-2022-a2 .",
+    "build-docker": "docker build --no-cache -t webprog-2022-a2 .",
     "run-docker": "docker run -dp 8080:8080 webprog-2022-a2",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
