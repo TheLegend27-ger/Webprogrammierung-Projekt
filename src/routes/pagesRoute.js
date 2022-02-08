@@ -6,4 +6,4 @@ router.get('', (req,res,next)=> {
 
 })
 
-nodule.exports = router
+module.exports = router
