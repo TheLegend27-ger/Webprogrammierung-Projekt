@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build-docker": "docker build -t webprog-2022-a2 .",
+    "run-docker": "docker run -dp 8080:8080 webprog-2022-a2",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
