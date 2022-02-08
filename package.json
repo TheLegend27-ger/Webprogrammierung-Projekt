@@ -2,7 +2,7 @@
   "name": "webprogrammierung-projekt",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "build-docker": "docker build -t webprog-2022-a2 .",
     "run-docker": "docker run -dp 8080:8080 webprog-2022-a2",
