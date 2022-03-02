@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/TheLegend27-ger/Webprogrammierung-Projekt#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "handlebars": "^4.7.7"
   }
 }
