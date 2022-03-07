@@ -6,6 +6,10 @@ const mustacheExpress = require('mustache-express');
 const routes = require('./routes');
 
 // Constants
+const express = require('express');
+const Handlebars = require("handlebars");
+const template = Handlebars.compile("Name: {{name}}");
+
 const port = 8080;
 const app = express();
 
