@@ -38,7 +38,6 @@ app.listen(port, () => {
 
   function addComment(){
     let commentText = document.getElementById("CommentTextField").textContent
-    let userID = "HIER USER ID AUS COOKIE LESEN"
     let userName = "HIER USERNAME AUS COOKIE LESEN"
     let site = "Seite die vom Comment betroffen ist speichern"
     this.comments.push({commentText, userID, userName, site})
