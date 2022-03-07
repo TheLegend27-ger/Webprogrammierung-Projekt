@@ -58,4 +58,17 @@ router.get('/impressum', function (req,res) {
     })
 })
 
+// Comments
+router.get('/comments', function(req,res) {
+    console.log(req.params)
+    console.log("HSIUHSDN")
+    res.send("HI")
+});
+
+router.post('/comments', function (req,res) {
+    console.log(req.params)
+    console.log("HSIUHSDN")
+    res.send("HI")
+})
+
 module.exports = router;

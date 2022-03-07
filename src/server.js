@@ -10,6 +10,10 @@ const routes = require('./routes');
 const port = 8080;
 const app = express();
 
+//Variables
+
+
+
 // Set and configure view engine mustache
 app.set('view engine', 'mustache')
 app.set('view cache', false)
@@ -47,3 +51,41 @@ app.use(function(req, res, next){
 app.listen(port, () => {
   console.log(`Running on http://localhost:${port}`);
 });
+
+
+
+
+
+//region CommentHandling
+
+
+  let comments = [];
+
+  function addComment(){
+    let commentText = document.getElementById("CommentTextField").textContent
+    let userName = "HIER USERNAME AUS COOKIE LESEN"
+    let site = "Seite die vom Comment betroffen ist speichern"
+    this.comments.push({commentText, userID, userName, site})
+    console.log(this.comments)
+  }
+  function commentBuilder(comment){
+
+    let frag = document.createDocumentFragment()
+
+  }
+  function displayComments(){
+    this.comments.forEach(this.commentBuilder(comment))
+  }
+
+
+//endregion
+
+
+
+
+
+
+
+
+
+

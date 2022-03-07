@@ -1,7 +1,25 @@
+<script type="text/javascript" src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script>
+    let comments = [];
 
+    function addComment(){
+        let commentText = document.getElementById("CommentTextField").textContent
+        let userID = "HIER USER ID AUS COOKIE LESEN"
+        let userName = "HIER USERNAME AUS COOKIE LESEN"
+        let site = "Seite die vom Comment betroffen ist speichern"
+        this.comments.push({commentText, userID, userName, site})
+        console.log(this.comments)
+    }
+    function commentBuilder(comment){
+        let frag = document.createDocumentFragment()
+    }
+    function displayComments(){
+        this.comments.forEach(this.commentBuilder(comment))
+    }
+</script>
 <section>
     <h2 id="Kommentare">Kommentare</h2>
-      <form action="https://duckduckgo.com">
+      <form method="POST" action="/comments">
         <label for="Username">
           <input
             id="Username"
@@ -15,14 +33,19 @@
           <textarea
             placeholder="Kommentar"
             name="Kommentar"
-            id="Kommentar"
+            id="CommentTextField"
             cols="30"
             rows="10"
           ></textarea>
         </label>
         <br />
         <label for="Submit">
-          <button name="Submt" id="Submit" type="submit">Submit</button>
+          <button  name="Submit" id="Submit" type="submit">Submit</button>
         </label>
       </form>
   </section>
+<section id="Comments">
+    {{#comments}}
+        {{> comment}}
+    {{/comments}}
+</section>
