@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "dev": "development=true nodemon ./src/server.js",
     "build-docker": "docker build --no-cache -t webprog-2022-a2 .",
     "run-docker": "docker run -dp 8080:8080 webprog-2022-a2",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +20,10 @@
   },
   "homepage": "https://github.com/TheLegend27-ger/Webprogrammierung-Projekt#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.3",
+    "mustache-express": "^1.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
