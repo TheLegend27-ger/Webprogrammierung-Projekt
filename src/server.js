@@ -17,16 +17,12 @@ app.set('views', path.join(__dirname, '/views')); // Sets the path where the tem
 app.engine('mustache', mustacheExpress(path.join(__dirname, '/views/partials'), '.mustache')); // Sets the path for partials
 
 // Create session
-// All copied from https://github.com/expressjs/express/blob/master/examples/auth/index.js
 app.use(express.urlencoded({ extended: false })); // I don't understand why I need this...
 app.use(session({
   resave: false, // don't save session if unmodified
   saveUninitialized: false, // don't create session until something stored
   secret: 'shhhh, very secret'
 }));
-
-
-
 
 // Serve views via routes
 app.use ('/', routes);
