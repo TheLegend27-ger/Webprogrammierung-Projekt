@@ -1,0 +1,28 @@
+{{> header}}
+<main class="main">
+  {{#userName}}
+    <p>
+      Sie sind schon angemeldet. Bitte loggen Sie sich aus um eine neue Nuter:in zu registrieren!
+    </p>
+  {{/userName}}
+  {{^userName}}
+    <form method="post" action="/register">
+      <p>
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+      </p>
+      <p>
+        <label>Username:</label>
+        <input type="text" name="username">
+      </p>
+      <p>
+        <label>Password:</label>
+        <input type="text" name="password">
+      </p>
+      <p>
+        <input type="submit" value="Register">
+      </p>
+    </form>
+  {{/userName}}
+</main>
+{{> footer}}
