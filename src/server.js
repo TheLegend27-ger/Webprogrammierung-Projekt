@@ -6,12 +6,12 @@ const mustacheExpress = require('mustache-express');
 const routes = require('./routes');
 
 // Constants
-const express = require('express');
-const Handlebars = require("handlebars");
-const template = Handlebars.compile("Name: {{name}}");
-
 const port = 8080;
 const app = express();
+
+//Variables
+
+
 
 // Set and configure view engine mustache
 app.set('view engine', 'mustache')
@@ -26,3 +26,42 @@ app.use(express.static('src'))
 app.listen(port, () => {
   console.log(`Running on http://localhost:${port}`);
 });
+
+
+
+
+
+//region CommentHandling
+
+
+  let comments = [];
+
+  function addComment(){
+    let commentText = document.getElementById("CommentTextField").textContent
+    let userID = "HIER USER ID AUS COOKIE LESEN"
+    let userName = "HIER USERNAME AUS COOKIE LESEN"
+    let site = "Seite die vom Comment betroffen ist speichern"
+    this.comments.push({commentText, userID, userName, site})
+    console.log(this.comments)
+  }
+  function commentBuilder(comment){
+
+    let frag = document.createDocumentFragment()
+
+  }
+  function displayComments(){
+    this.comments.forEach(this.commentBuilder(comment))
+  }
+
+
+//endregion
+
+
+
+
+
+
+
+
+
+
