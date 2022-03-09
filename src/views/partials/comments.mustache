@@ -1,33 +1,26 @@
 <script type="text/javascript" src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<h2 id="Kommentare">Kommentare</h2>
 <section>
-    <h2 id="Kommentare">Kommentare</h2>
-      <form method="POST" action="/comments">
-        <label for="Username">
-          <input
-            id="Username"
-            name="Username"
-            type="text"
-            placeholder="Username"
-          />
-        </label>
-        <br/>
-        <label for="Kommentar">
-          <textarea
-            placeholder="Kommentar"
-            name="Kommentar"
-            id="CommentTextField"
-            cols="30"
-            rows="10"
-          ></textarea>
-        </label>
-        <br />
-        <label for="Submit">
-          <button  name="Submit" id="Submit" type="submit">Submit</button>
-        </label>
-      </form>
-  </section>
+  {{#userName}}
+    {{> commentForm}}
+  {{/userName}}
+  {{^userName}}
+    {{> commentFormError}}
+  {{/userName}}
+</section>
 <section id="Comments">
-    {{#comments}}
-        {{> comment}}
-    {{/comments}}
+  <div class="container my-5 py-5">
+      <div class="row d-flex justify-content-center">
+          <div class="col-md-12 col-lg-10">
+              <div class="card text-dark">
+                  <div class="card-body p-4">
+                    {{#comments}}
+                      {{> comment}}
+                    {{/comments}}                 
+                  </div>
+                  <hr class="my-0" />
+              </div>
+          </div>
+      </div>
+  </div>  
 </section>

@@ -1,44 +1,34 @@
-<div class="container my-5 py-5">
-    <div class="row d-flex justify-content-center">
-        <div class="col-md-12 col-lg-10">
-            <div class="card text-dark">
-                <div class="card-body p-4">
-                    <h4 class="mb-0">Recent comments</h4>
-                    <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
 
                     <div class="d-flex flex-start">
+                        <p id="hiddenID" style="display:none">{{commentID}}<p>
                         <img
                                 class="rounded-circle shadow-1-strong me-3"
-                                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp"
+                                src="https://as1.ftcdn.net/v2/jpg/02/59/39/46/1000_F_259394679_GGA8JJAEkukYJL9XXFH2JoC3nMguBPNH.jpg"
                                 alt="avatar"
                                 width="60"
                                 height="60"
                         />
                         <div>
-                            <h6 class="fw-bold mb-1">Maggie Marsh</h6>
+                            {{#isMyComment}}
+                                <h6 style="color:green" class="fw-bold mb-1">Du --> {{userName}}</h6>
+                            {{/isMyComment}}
+                            {{^isMyComment}}
+                                <h6 class="fw-bold mb-1">{{userName}}</h6>
+                            {{/isMyComment}}
                             <div class="d-flex align-items-center mb-3">
                                 <p class="mb-0">
-                                    March 07, 2021
+                                    {{date}}
                                 </p>
-                                <a href="#!" class="link-muted"
-                                ><i class="fas fa-pencil-alt ms-2"></i
-                                ></a>
-                                <a href="#!" class="link-muted"><i class="fas fa-redo-alt ms-2"></i></a>
-                                <a href="#!" class="link-muted"><i class="fas fa-heart ms-2"></i></a>
+                                {{#liked}}
+                                    <a href="/like?id={{commentID}}" class="link-muted"><i class="fas fa-heart ms-2 liked"></i></a>
+                                {{/liked}}
+                                {{^liked}}
+                                    <a href="/like?id={{commentID}}" class="link-muted"><i class="fas fa-heart ms-2 notliked"></i></a>
+                                {{/liked}}
                             </div>
                             <p class="mb-0">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting
-                                industry. Lorem Ipsum has been the industry's standard dummy text ever
-                                since the 1500s, when an unknown printer took a galley of type and
-                                scrambled it.
+                                {{commentText}}
                             </p>
                         </div>
                     </div>
-                </div>
 
-                <hr class="my-0" />
-
-            </div>
-        </div>
-    </div>
-</div>
