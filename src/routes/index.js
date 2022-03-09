@@ -14,8 +14,11 @@ router.get('/', function(req,res) {
 router.get('/games/*', function (req, res) {
     myFullRoute = `games/${req.params[0]}`
     myRoute = `${req.params[0]}`
-    var myComments = setSiteComments(req.session.user)
-    
+    if (req.session.user){
+        var myComments = getSiteComments(myRoute,req.session.user.name);
+    }else {
+        var myComments = getSiteComments(myRoute,"")
+    }
 
     res.render(`games/${req.params[0]}`, {
         comments: myComments,
@@ -115,13 +118,6 @@ var comments = [
 
 
 //region CommentHandling
-  function setSiteComments(user){
-    if (user){
-        return getSiteComments(myRoute,req.session.user.name);
-    }else {
-        return getSiteComments(myRoute,"")
-    }
-  }
   function dateBuilder(){
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
