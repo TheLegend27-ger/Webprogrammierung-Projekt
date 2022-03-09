@@ -13,31 +13,35 @@
   </head>
   <body>
     <div id="top" class="grid-wrapper"> <!-- .grid-wrapper -->
-      <header class="header">
-        <a href="/" class="logo">
-          <img src="https://pngimg.com/uploads/dice/dice_PNG25.png" alt=""
-            width="50">
-          <strong>Spieleprofis!</strong>
-        </a>
-        <nav class="game-nav">
-          <ul>
-            <li><a href="/games/backgammon">Backgammon</a></li>
-            <li><a href="/games/kniffel">Kniffel</a></li>
-            <li><a href="/games/romme">Rommé</a></li>
-            <li><a href="/games/scheresteinpapier">Schere Stein Papier</a></li>
-            <li><a href="/games/tictactoe">Tic Tac Toe</a></li>
-          </ul>
-        </nav>
-        <nav class="auth-nav">
-          <ul>
-            {{^userName}}
-              <li><a href="/login">Login</a></li>
-              <li><a href="/register">Register</a></li>
-            {{/userName}}
-            {{#userName}}
-              <li>Hallo {{userName.name}}!</li>
-              <li><a href="/logout">Logout</a></li>
-            {{/userName}}
-          </ul>
-        </nav>
+      <header class="container pb-5">
+        <div class="row">
+          <div class="col-4">
+            <a href="/" class="logo py-3">
+              <img src="https://pngimg.com/uploads/dice/dice_PNG25.png" alt=""
+                width="80">
+              <strong>Spieleprofis!</strong>
+            </a>
+          </div>
+          <nav class="col-8 d-flex justify-content-end align-items-center">
+            <ul class="nav">
+              <li class="nav-item"><a class="nav-link" href="/games/backgammon">Backgammon</a></li>
+              <li class="nav-item"><a class="nav-link" href="/games/kniffel">Kniffel</a></li>
+              <li class="nav-item"><a class="nav-link" href="/games/romme">Rommé</a></li>
+              <li class="nav-item"><a class="nav-link" href="/games/scheresteinpapier">Schere Stein Papier</a></li>
+              <li class="nav-item"><a class="nav-link" href="/games/tictactoe">Tic Tac Toe</a></li>
+            </ul>
+          </nav>
+          <nav class="col-12 d-flex justify-content-end">
+            <ul class="nav">
+              {{^userName}}
+                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="/register">Registrieren</a></li>
+              {{/userName}}
+              {{#userName}}
+                <li class="nav-item">Hallo {{userName.name}}!</li>
+                <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+              {{/userName}}
+            </ul>
+          </nav>
+        </div>
       </header>

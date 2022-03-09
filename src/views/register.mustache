@@ -1,28 +1,32 @@
 {{> header}}
-<main class="main">
+<main class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-4">
   {{#userName}}
     <p>
-      Sie sind schon angemeldet. Bitte loggen Sie sich aus um eine neue Nuter:in zu registrieren!
+      Sie sind schon angemeldet. Bitte loggen Sie sich aus um eine neue Nutzer:in zu registrieren!
     </p>
   {{/userName}}
   {{^userName}}
     <form method="post" action="/register">
-      <p>
-        <label for="name">Name:</label>
-        <input type="text" name="name">
-      </p>
-      <p>
-        <label>Username:</label>
-        <input type="text" name="username">
-      </p>
-      <p>
-        <label>Password:</label>
-        <input type="text" name="password">
-      </p>
-      <p>
-        <input type="submit" value="Register">
-      </p>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" type="text" name="name" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input id="username" type="text" name="username" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Passwort</label>
+        <input id="password" type="password" name="password" class="form-control">
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Registrieren</button>
+      </div>
     </form>
   {{/userName}}
+    </div>
+  </div>
 </main>
 {{> footer}}
