@@ -3,6 +3,11 @@
   <div class="row">
     <div class="col-12">
       <h1>Tic Tac Toe - Spielanleitung</h1>
+      {{#userName}}
+      <form method="POST" action="/favorites">
+        <button type="submit" name="favoriteButton" id="favoriteButton"> Zu Favoriten hinzufügen </button>
+      </form>
+      {{/userName}}
       <h2>Inhaltsverzeichnis</h2>
 
         <ol>

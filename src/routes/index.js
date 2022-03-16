@@ -1,6 +1,7 @@
 let router = require('express').Router();
 const { handleLogin, handleRegistration } = require('../auth');
 var myRoute, myFullRoute
+favorites  = [];
 
 // Homepage
 router.get('/', function(req,res) {
@@ -94,6 +95,14 @@ router.use('/like', function(req,res) {
     res.redirect(myFullRoute)
 });
 
+//Favorite Sites
+
+router.post('/favorites', function (req, res){
+    console.log(req.url)
+    favorites.push(req.url)
+    res.redirect(myFullRoute)
+})
+
 
 
 var comments = [
@@ -168,7 +177,9 @@ var comments = [
 
 //endregion
 
-
+function addFavorite(siteName){
+    favorites.push(siteName)
+}
 
 
 
