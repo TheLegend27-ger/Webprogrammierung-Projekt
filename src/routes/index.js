@@ -1,6 +1,7 @@
 let router = require('express').Router();
 const { handleLogin, handleRegistration, setUsers, getUsers } = require('../auth');
 var myRoute, myFullRoute
+favorites  = [];
 
 // Homepage
 router.get('/', function(req,res) {
@@ -144,6 +145,16 @@ router.use('/like', function(req,res) {
 });
 
 //genericComments
+//Favorite Sites
+
+router.post('/favorites', function (req, res){
+    console.log(req.url)
+    favorites.push(req.url)
+    res.redirect(myFullRoute)
+})
+
+
+
 var comments = [
     {
         "commentID":1,
@@ -217,7 +228,9 @@ var comments = [
   }
 
 
-
+function addFavorite(siteName){
+    favorites.push(siteName)
+}
 
 
 
