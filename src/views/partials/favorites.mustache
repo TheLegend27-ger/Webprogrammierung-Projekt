@@ -1,0 +1,11 @@
+<h2> Favoriten </h2>
+<ul class="nav">
+  {{#visits}}
+    {{#isFavorite}}
+      {{> singleFavorite}}
+    {{/isFavorite}}
+  {{/visits}}
+  {{^visits}}
+    <p> Es existieren keine Favoriten </p>
+  {{/visits}}
+</ul>

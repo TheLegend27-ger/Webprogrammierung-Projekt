@@ -28,12 +28,16 @@ router.get('/games/*', function (req, res) {
     myRoute = `${req.params[0]}`
     if (req.session.user){
         var myComments = getSiteComments(myRoute,req.session.user.name);
-        addVisitByUser(myRoute, req.session.user.name, myFullRoute)
+        addVisitByUser(myRoute, req.session.user.name, myFullRoute);
+        var myFavorite = getFavoriteStatus(req.session.user.name);
+        console.log(myFavorite);
     }else {
-        var myComments = getSiteComments(myRoute,"")
+        var myComments = getSiteComments(myRoute,"");
+        var myFavorite = false
     }
 
     res.render(`games/${req.params[0]}`, {
+        isFavorite: myFavorite,
         comments: myComments,
         userName: req.session.user,
         pageTitle: `${req.params[0].charAt(0).toUpperCase() + req.params[0].slice(1)} - Spieleprofis!`
@@ -85,11 +89,7 @@ router.get('/impressum', function (req,res) {
 //visitHandler
 function getVisitsByUser(userName){
     users = getUsers();
-    //console.log(users)
     let visits = users[userName].visits
-    //console.log(users[userName])
-    //users[userName].visits = [{kniffel:1}]
-    //console.log(users[userName].visits)
     
     return visits;
 }
@@ -112,7 +112,8 @@ function addVisitByUser(site, userName,myLink){
         users[userName].visits.push({
         name: site,
         count: 1,
-        link: myLink })
+        link: myLink,
+        isFavorite: false })
     }
     
     setUsers(users)
@@ -121,7 +122,6 @@ function addVisitByUser(site, userName,myLink){
 
 //CommentHandling
 router.post('/comments', function (req,res) {
-    //console.log(req.session.user)
     
     let tempComment = {
       "date": dateBuilder(),
@@ -144,14 +144,45 @@ router.use('/like', function(req,res) {
     res.redirect(myFullRoute)
 });
 
-//genericComments
-//Favorite Sites
 
-router.post('/favorites', function (req, res){
-    console.log(req.url)
-    favorites.push(req.url)
+
+//Favorite Sites
+router.use('/favorites', function (req, res){
+    if (req.session.user){
+        switchlikeFavorite(req.session.user.name )
+    }else {
+        res.redirect("/login")
+    }
     res.redirect(myFullRoute)
 })
+
+function switchlikeFavorite(userName){
+    users = getUsers();
+    users[userName].visits.forEach(visit=>{
+        if (visit.name == myRoute){
+           visit.isFavorite = !visit.isFavorite
+           console.log("SWITCH FAVORITE")
+        }
+    })
+    setUsers(users)
+    console.log(users[userName].visits)
+}
+function getFavoriteStatus(userName){
+    console.log("getFavoriteStatus")
+    users = getUsers();
+    let myVar
+    users[userName].visits.forEach(visit=>{
+        console.log("NAME:  " + visit.name)
+        console.log("ROUTE:  " + myRoute)
+        if (visit.name == myRoute){
+            console.log(visit.isFavorite)
+            myVar = visit.isFavorite
+            
+        }
+    })
+    return myVar
+}
+
 
 
 
@@ -226,15 +257,5 @@ var comments = [
     comments.push(tempComment)
     //console.log(comments)
   }
-
-
-function addFavorite(siteName){
-    favorites.push(siteName)
-}
-
-
-
-
-
 
 module.exports = router;
