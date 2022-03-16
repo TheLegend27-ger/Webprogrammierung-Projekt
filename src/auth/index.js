@@ -1,8 +1,13 @@
 var hash = require('pbkdf2-password')();
 
 // Replace with register page later
+function getUsers(){return users}
+function setUsers(newUsers){this.users = newUsers}
 var users = {
-  test: { name: 'Test' }
+  test: 
+  { 
+    name: 'Test',
+  }
 };
 
 hash({ password: 'test' }, function (err, pass, salt, hash) {
@@ -72,7 +77,8 @@ function handleRegistration(req, res, next) {
     }
     res.redirect('/login');
   });
-  
 }
 
-module.exports = { handleLogin, handleRegistration };
+
+
+module.exports = { handleLogin, handleRegistration, setUsers, getUsers };

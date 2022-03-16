@@ -1,10 +1,21 @@
 let router = require('express').Router();
-const { handleLogin, handleRegistration } = require('../auth');
+const { handleLogin, handleRegistration, setUsers, getUsers } = require('../auth');
 var myRoute, myFullRoute
 
 // Homepage
 router.get('/', function(req,res) {
+    if (req.session.user){
+        var myVisits = getVisitsByUser(req.session.user.name)
+        if (myVisits != undefined ){
+            var showVisits= true
+        }
+    }else {
+        
+    }
+    
     res.render ('index', {
+        showVisits: showVisits,
+        visits: myVisits,
         userName: req.session.user,
         pageTitle: "Spieleprofis!"
     });
@@ -16,6 +27,7 @@ router.get('/games/*', function (req, res) {
     myRoute = `${req.params[0]}`
     if (req.session.user){
         var myComments = getSiteComments(myRoute,req.session.user.name);
+        addVisitByUser(myRoute, req.session.user.name, myFullRoute)
     }else {
         var myComments = getSiteComments(myRoute,"")
     }
@@ -68,8 +80,45 @@ router.get('/impressum', function (req,res) {
     })
 })
 
-// Comments
 
+//visitHandler
+function getVisitsByUser(userName){
+    users = getUsers();
+    //console.log(users)
+    let visits = users[userName].visits
+    //console.log(users[userName])
+    //users[userName].visits = [{kniffel:1}]
+    //console.log(users[userName].visits)
+    
+    return visits;
+}
+
+function addVisitByUser(site, userName,myLink){
+    let users = getUsers();
+    
+    //undefined check
+    if (users[userName].visits == undefined){
+        users[userName].visits = []
+    }
+        let visitFound =  false
+        users[userName].visits.forEach(visit=>{
+            if (visit.name == site){
+                visit.count += 1;
+                visitFound = true
+            }
+        })
+        if (visitFound == false){
+            users[userName].visits.push({
+                name: site,
+                count: 1,
+                link: myLink })
+        }
+    
+    setUsers(users)
+}
+
+
+//CommentHandling
 router.post('/comments', function (req,res) {
     //console.log(req.session.user)
     
@@ -94,8 +143,7 @@ router.use('/like', function(req,res) {
     res.redirect(myFullRoute)
 });
 
-
-
+//genericComments
 var comments = [
     {
         "commentID":1,
@@ -116,8 +164,6 @@ var comments = [
 ];
 
 
-
-//region CommentHandling
   function dateBuilder(){
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
@@ -126,18 +172,20 @@ var comments = [
     today = dd + '.' + mm + '.' + yyyy;
     return today
   }
+  //Like an und aus
   function switchlike(id, name){
     let myIndex = comments.findIndex(x=> x.commentID == id)
-    console.log(comments[myIndex].likeList + "VORHER")
+    // console.log(comments[myIndex].likeList + "VORHER")
     let myInnerIndex = comments[myIndex].likeList.findIndex(x=> x == name)
-    console.log(myInnerIndex + "  inner index")
+    // console.log(myInnerIndex + "  inner index")
     if (myInnerIndex > -1){
         comments[myIndex].likeList.splice(myInnerIndex,1)
     }else{
         comments[myIndex].likeList.push(name)
     }
-    console.log(comments[myIndex].likeList + "NACHHER")
+    // console.log(comments[myIndex].likeList + "NACHHER")
   }
+  //Filtern der Comments für aktuelle Site
   function getSiteComments(route, name){
     let tempComments =[]
     comments.forEach(element=>{
@@ -160,13 +208,14 @@ var comments = [
     //console.log(tempComments)
     return tempComments
   }
+
   function addComment(tempComment){
+    //Läuft ggf. in Fehler wenn man Comments löscht, war aber eh nicht vorgesehen :)))
     tempComment.commentID = comments[comments.length-1].commentID + 1
     comments.push(tempComment)
     //console.log(comments)
   }
 
-//endregion
 
 
 

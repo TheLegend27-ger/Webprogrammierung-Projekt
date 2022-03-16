@@ -1,0 +1,19 @@
+
+{{#showVisits}}
+<h2>Deine besuchten Seiten</h2>
+<table class="table">
+        <thead>
+          <tr>
+            <th>Spiel</th>
+            <th>Besuche</th>
+            <th></th>
+          </tr>
+        </thead>
+        
+        <tbody>
+        {{#visits}}
+          {{> mostVisitedSingleSite}}
+        {{/visits}}   
+        </tbody>
+      </table>
+{{/showVisits}}
