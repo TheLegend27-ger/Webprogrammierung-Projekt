@@ -100,19 +100,19 @@ function addVisitByUser(site, userName,myLink){
     if (users[userName].visits == undefined){
         users[userName].visits = []
     }
-        let visitFound =  false
-        users[userName].visits.forEach(visit=>{
-            if (visit.name == site){
-                visit.count += 1;
-                visitFound = true
-            }
-        })
-        if (visitFound == false){
-            users[userName].visits.push({
-                name: site,
-                count: 1,
-                link: myLink })
+    let visitFound =  false
+    users[userName].visits.forEach(visit=>{
+    if (visit.name == site){
+        visit.count += 1;
+        visitFound = true
         }
+    })
+    if (visitFound == false){
+        users[userName].visits.push({
+        name: site,
+        count: 1,
+        link: myLink })
+    }
     
     setUsers(users)
 }
