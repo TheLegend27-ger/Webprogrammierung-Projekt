@@ -2,6 +2,7 @@ var hash = require('pbkdf2-password')();
 
 // Replace with register page later
 function getUsers(){return users}
+function getUserKey(user) { return Object.keys(users).find(item => users[item].name === user.name); }
 function setUsers(newUsers){this.users = newUsers}
 var users = {
   test: 
@@ -81,4 +82,4 @@ function handleRegistration(req, res, next) {
 
 
 
-module.exports = { handleLogin, handleRegistration, setUsers, getUsers };
+module.exports = { handleLogin, handleRegistration, setUsers, getUsers, getUserKey };

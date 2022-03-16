@@ -1,12 +1,12 @@
 let router = require('express').Router();
-const { handleLogin, handleRegistration, setUsers, getUsers } = require('../auth');
+const { handleLogin, handleRegistration, setUsers, getUsers, getUserKey } = require('../auth');
 var myRoute, myFullRoute
 favorites  = [];
 
 // Homepage
 router.get('/', function(req,res) {
     if (req.session.user){
-        var myVisits = getVisitsByUser(req.session.user.name)
+        var myVisits = getVisitsByUser( getUserKey(req.session.user) )
         if (myVisits != undefined ){
             var showVisits= true
         }
@@ -27,10 +27,9 @@ router.get('/games/*', function (req, res) {
     myFullRoute = `games/${req.params[0]}`
     myRoute = `${req.params[0]}`
     if (req.session.user){
-        var myComments = getSiteComments(myRoute,req.session.user.name);
-        addVisitByUser(myRoute, req.session.user.name, myFullRoute);
-        var myFavorite = getFavoriteStatus(req.session.user.name);
-        console.log(myFavorite);
+        var myComments = getSiteComments(myRoute, getUserKey(req.session.user));
+        addVisitByUser(myRoute, getUserKey(req.session.user), myFullRoute);
+        var myFavorite = getFavoriteStatus(getUserKey(req.session.user));
     }else {
         var myComments = getSiteComments(myRoute,"");
         var myFavorite = false
@@ -136,7 +135,7 @@ router.post('/comments', function (req,res) {
 
 router.use('/like', function(req,res) {
     if (req.session.user){
-        switchlike(req.query.id,req.session.user.name )
+        switchlike(req.query.id, getUserKey(req.session.user) )
     }else {
         res.redirect("/login")
     }
@@ -149,7 +148,7 @@ router.use('/like', function(req,res) {
 //Favorite Sites
 router.use('/favorites', function (req, res){
     if (req.session.user){
-        switchlikeFavorite(req.session.user.name )
+        switchlikeFavorite( getUserKey(req.session.user) )
     }else {
         res.redirect("/login")
     }
@@ -161,21 +160,17 @@ function switchlikeFavorite(userName){
     users[userName].visits.forEach(visit=>{
         if (visit.name == myRoute){
            visit.isFavorite = !visit.isFavorite
-           console.log("SWITCH FAVORITE")
         }
     })
     setUsers(users)
-    console.log(users[userName].visits)
 }
 function getFavoriteStatus(userName){
-    console.log("getFavoriteStatus")
     users = getUsers();
     let myVar
     users[userName].visits.forEach(visit=>{
-        console.log("NAME:  " + visit.name)
-        console.log("ROUTE:  " + myRoute)
+        // console.log("NAME:  " + visit.name)
+        // console.log("ROUTE:  " + myRoute)
         if (visit.name == myRoute){
-            console.log(visit.isFavorite)
             myVar = visit.isFavorite
             
         }
